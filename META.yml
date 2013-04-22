@@ -1,9 +1,9 @@
 --- #YAML:1.0
 name:               File-BetweenTree
-version:            1.01
+version:            1.02
 abstract:           binary search of variable length.
 author:
-    - Mitsuru Yasuda & <dsyrtm@gmail.com>
+    - Mitsuru Yasuda & <dsyrtm@cpan.org>
 license:            unknown
 distribution_type:  module
 configure_requires:

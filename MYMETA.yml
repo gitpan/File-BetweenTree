@@ -1,7 +1,7 @@
 ---
 abstract: 'binary search of variable length.'
 author:
-  - 'Mitsuru Yasuda & <dsyrtm@gmail.com>'
+  - 'Mitsuru Yasuda & <dsyrtm@cpan.org>'
 build_requires:
   ExtUtils::MakeMaker: 0
 configure_requires:
@@ -19,4 +19,4 @@ no_index:
     - t
     - inc
 requires: {}
-version: 1.01
+version: 1.02

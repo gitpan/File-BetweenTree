@@ -8,7 +8,7 @@ use warnings;
 use Carp ':DEFAULT', 'confess';
 use Fcntl qw(:seek O_RDONLY);
 
-our $VERSION = '1.01';
+our $VERSION = '1.02';
 
 sub new {
 	my ($class, $file, $recsep) = @_;
@@ -188,7 +188,8 @@ sub search {
 	    read $self->{fh}, $dat, $read_size;
 
 	      $dat = $t . $_sep . $dat;
-	      $_sep = $dat =~ /($self->{_sep_})$/ ? $1 : '';
+	     #$_sep = $dat =~  /($self->{_sep_})$/  ? $1 : '';
+	      $_sep = $dat =~ s/($self->{_sep_})$// ? $1 : '';
 
 	      @z = split $self->{_sep_}, $dat;
 	      shift @z if ($count eq 1 && $_min ne 0);
@@ -315,6 +316,7 @@ C<search> is able to find all of the intermediate element "two elements".
 
 look for the data between <$a> and <$b>.
 <$a>, the maximum and minimum values are <$b>.
+
 It can be the same value <$b> a <$a>.
 
 The return value is an array reference. If you can not find a match, 
@@ -390,12 +392,12 @@ Order of the sequence obtained by dividing the line.
 	   );
 	print "result = " . join("\n", @{$result_array_ref});
 
-	result = 5:lemon 6:lemon 7:lemon 8:orange 9:orange
+	result = 5:lemon 6:lemon 7:lemon 8:orange 9:orange.
 
 
 =head1 C<mon>
 
-You can monitor the state of the processing
+You can monitor the state of the processing.
 
 	print $bt->mon;
 
@@ -421,21 +423,21 @@ You can monitor the state of the processing
 
 =head2 Interpretation above
 
-<- : $a Move to low  addr the current pointer
--> : $a Move to high addr the current pointer
-<= : $b Move to low  addr the current pointer
-=> : $b Move to high addr the current pointer
+=item <- : $a Move to low  addr the current pointer.
+=item -> : $a Move to high addr the current pointer.
+=item <= : $b Move to low  addr the current pointer.
+=item => : $b Move to high addr the current pointer.
 
-Number of first : current pointer addr
-Number of second: Amount of movement of the pointer
+=item Number of first : current pointer addr.
+=item Number of second: Amount of movement of the pointer.
 
-| min : Addr with a minimum value determined for the time being
-| max : Addr with a maximum value determined for the time being
+=item | min : Addr with a minimum value determined for the time being.
+=item | max : Addr with a maximum value determined for the time being.
 
 
 =head1 AUTHOR
 
-Mitsuru Yasuda, dsyrtm@gmail.com
+Mitsuru Yasuda, dsyrtm@cpan.org
 
 	http://simql.com/
 

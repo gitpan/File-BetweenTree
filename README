@@ -1,4 +1,4 @@
-File-BetweenTree version 1.01
+File-BetweenTree version 1.02
 =============================
 
 NAME
@@ -161,16 +161,16 @@ mon
 
         Interpretation above
 
-        <- : $a Move to low  addr the current pointer
-        -> : $a Move to high addr the current pointer
-        <= : $b Move to low  addr the current pointer
-        => : $b Move to high addr the current pointer
+        <- : $a Move to low  addr the current pointer.
+        -> : $a Move to high addr the current pointer.
+        <= : $b Move to low  addr the current pointer.
+        => : $b Move to high addr the current pointer.
 
-        Number of first : current pointer addr
-        Number of second: Amount of movement of the pointer
+        Number of first : current pointer addr.
+        Number of second: Amount of movement of the pointer.
 
-        | min : Addr with a minimum value determined for the time being
-        | max : Addr with a maximum value determined for the time being
+        | min : Addr with a minimum value determined for the time being.
+        | max : Addr with a maximum value determined for the time being.
 
         please try to run the "example/test_large_lows.cgi"
 
